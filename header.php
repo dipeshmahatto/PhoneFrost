@@ -3,7 +3,7 @@
         <!-- MAIN CONTAINER -->
         <div id="container">
             <!-- SHOP logo -->
-            <img id="logo" onclick="home()" src="img/logo.png" alt="PhoneFrost">
+            <a href="index.php"><img id="logo" onclick="home()" src="img/logo.png" alt="PhoneFrost"></a>
             <!-- COLLCETIONS ON WEBSITE -->
             <div id="collection">
                 <div id="smartphones"><a href="#Smartphones"> SMARTPHONES </a></div>
@@ -17,7 +17,7 @@
             <!-- USER SECTION (CART AND USER ICON) -->
             <div id="user">
                 <a href="cart.php"> <i class="fas fa-shopping-cart addedToCart">
-                        <div id="badge"> 0 </div>
+                        <div id="badge"> 2 </div>
                     </i></a>
                 <a href="#"> <i class="fas fa-user-circle userIcon"></i> </a>
             </div>

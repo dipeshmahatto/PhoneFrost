@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> Cart | E-COMMERCE WEBSITE BY EDYODA </title>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/cart.css">
     <!-- favicon -->
     <link rel="icon"
@@ -29,17 +31,21 @@
         <div id="cartContainer">
             <div id="cartContainer">
                 <div id="boxContainer">
-                    <div id="box"><img
-                            src="img/a1.jpg">
+                    <div id="box"><img id="cartimg" src="img/a1.jpg">
                         <h3>Men Navy Blue Solid Sweatshirt × 1</h3>
-                        <h4>Amount: Rs2599</h4>
+                        <h4>Amount: Rs 300</h4>
+                    </div>
+                    <div id="box"><img id="cartimg" src="img/a1.jpg">
+                        <h3>Men Navy Blue Solid Sweatshirt × 1</h3>
+                        <h4>Amount: Rs 300</h4>
                     </div>
                 </div>
                 <div id="totalContainer">
                     <div id="total">
                         <h2>Total Amount</h2>
-                        <h4>Amount: Rs 31188</h4>
-                        <div id="button"><button><a href="<?php echo "orderPlaced.php   " ?>">Place Order</a></button></div>
+                        <h4>Amount: Rs 600</h4>
+                        <div id="button"><button><a href="<?php echo "orderPlaced.php   " ?>">Place Order</a></button>
+                        </div>
                     </div>
                 </div>
             </div>
