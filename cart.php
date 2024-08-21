@@ -37,7 +37,7 @@
                     </div>
                     <div id="box"><img id="cartimg" src="img/a1.jpg">
                         <h3>Men Navy Blue Solid Sweatshirt × 1</h3>
-                        <h4>Amount: Rs 300</h4>
+                        <h4>Amount: Rs 299</h4>
                     </div>
                 </div>
                 <div id="totalContainer">

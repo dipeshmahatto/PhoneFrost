@@ -27,6 +27,6 @@
             </div>
         </div>
         <div id="credit"><a href="https://linkedin.com/in/dipesh-mahato-6450b1225" target="_blank"> © Dipesh Mahato </a>
-             | <a href="#index.php"> PhoneFrost </a> </div>
+             | <a href="index.php"> PhoneFrost </a> </div>
     </section>
 </footer>

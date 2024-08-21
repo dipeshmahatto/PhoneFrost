@@ -7,9 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/content.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/orderPlaced.css">
+    <link rel="stylesheet" href="css/content.css">
     <link rel="stylesheet" href="css/contetDetails.css">
 
     <title> PhoneForst</title>
