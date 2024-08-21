@@ -1,0 +1,30 @@
+#containerSlider
+        {
+            margin: auto;
+            width: 90%;
+            text-align: center;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            box-sizing: border-box;
+        }
+        #containerSlider img
+        {
+            width: 1500px;
+            height: 504px;
+            text-align: center;
+            align-content: center;
+        }
+        @media(max-width: 732px)
+        {
+            #containerSlider img
+            {
+                height: 12em;
+            }
+        }
+        @media(max-width: 500px)
+        {
+            #containerSlider img
+            {
+                height: 10em;
+            }
+        }
