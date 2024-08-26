@@ -1,3 +1,14 @@
+<?php
+// session_start();
+
+// Initialize cart if not set
+if (!isset($_SESSION['cart'])) {
+    $_SESSION['cart'] = [];
+}
+
+// Count the total number of items in the cart
+$totalItems = array_sum($_SESSION['cart']);
+?>
 <header>
     <section>
         <!-- MAIN CONTAINER -->
@@ -16,9 +27,11 @@
             </div>
             <!-- USER SECTION (CART AND USER ICON) -->
             <div id="user">
-                <a href="cart.php"> <i class="fas fa-shopping-cart addedToCart">
-                        <div id="badge"> 2 </div>
-                    </i></a>
+                <a href="cart.php">
+                    <i class="fas fa-shopping-cart addedToCart">
+                        <div id="badge"><?php echo $totalItems; ?></div>
+                    </i>
+                </a>
                 <a href="#"> <i class="fas fa-user-circle userIcon"></i> </a>
             </div>
         </div>

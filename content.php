@@ -1,28 +1,51 @@
+<?php
+include 'admin/query/database.php';
+
+// Fetch Smartphones
+$smartphones = $conn->query("SELECT * FROM products WHERE category_id = 1");
+
+// Fetch Accessories (Headphones and Earpods)
+$accessories = $conn->query("SELECT * FROM products WHERE category_id IN (2, 3)");
+?>
+
 <div id="mainContainer">
 
+    <!-- Smartphones Section -->
     <h1 id="Smartphones"> Smartphones </h1>
     <div id="containersmartphones">
-        <div id="box"><a href="<?php echo 'contentDetails.php' ?>"><img src="img/1.jpg">
-                <div id="details">
-                    <h3>Men Navy Blue Solid Sweatshirt</h3>
-                    <h4>United Colors of Benetton</h4>
-                    <h2>rs 2599</h2>
-                </div>
-            </a>
-        </div>
+        <?php while($row = $smartphones->fetch_assoc()) { ?>
+            <div id="box">
+                <a href="contentDetails.php?id=<?php echo $row['id']; ?>">
+                    <img src="img/<?php echo $row['id']; ?>.jpg" alt="<?php echo $row['name']; ?>">
+                    <div id="details">
+                        <h3><?php echo $row['name']; ?></h3>
+                        <h4><?php echo $row['description']; ?></h4>
+                        <h2>rs <?php echo number_format($row['price'], 2); ?></h2>
+                    </div>
+                </a>
+            </div>
+        <?php } ?>
     </div>
 
-
-    <h1 id="Accessories"> accessories for men and women </h1>
+    <!-- Accessories Section -->
+    <h1 id="Accessories"> Accessories for men and women </h1>
     <div id="containerAccessories">
-        <div id="box"><a href="<?php echo 'contentDetails.php' ?>"><img src="img/a1.jpg">
-                <div id="details">
-                    <h3>Unisex Silver-Toned Series 3 Smart Watch</h3>
-                    <h4>Apple</h4>
-                    <h2>rs 31999</h2>
-                </div>
-            </a>
-        </div>
+        <?php while($row = $accessories->fetch_assoc()) { ?>
+            <div id="box">
+                <a href="contentDetails.php?id=<?php echo $row['id']; ?>">
+                    <img src="img/<?php echo $row['id']; ?>.jpg" alt="<?php echo $row['name']; ?>">
+                    <div id="details">
+                        <h3><?php echo $row['name']; ?></h3>
+                        <h4><?php echo $row['description']; ?></h4>
+                        <h2>rs <?php echo number_format($row['price'], 2); ?></h2>
+                    </div>
+                </a>
+            </div>
+        <?php } ?>
     </div>
+
 </div>
-</div>
+
+<?php
+$conn->close();
+?>
