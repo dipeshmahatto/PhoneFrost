@@ -10,6 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
     $description = $_POST['description'];
     $price = $_POST['price'];
+    $storage = $_POST['storage'];
     $category_id = $_POST['category_id'];
 
     // Handle Image Upload
@@ -47,10 +48,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Update product details without changing the image
-    $sql = "UPDATE products SET name='$name', description='$description', price='$price', category_id='$category_id' WHERE id=$id";
+    $sql = "UPDATE products SET name='$name', description='$description', price='$price',storage='$storage', category_id='$category_id' WHERE id=$id";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Product updated successfully";
+        header("location: ad_dashboard.php");
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
@@ -78,7 +79,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <textarea name="description" required><?php echo $product['description']; ?></textarea><br>
 
         <label>Price:</label>
-        <input type="number" name="price" value="<?php echo $product['price']; ?>" step="0.01" required><br>
+        <input type="number" name="price" value="<?php echo $product['price']; ?>"  required><br>
+        <label>Storage:</label>
+        <input type="text" name="storage" value="<?php echo $product['storage']; ?>"  required><br>
 
         <label>Category:</label>
         <select name="category_id">

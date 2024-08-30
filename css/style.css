@@ -5,6 +5,7 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
+    margin: 100px;
 }
 
 h1 {
@@ -88,7 +89,12 @@ td {
     background-color: #fff;
     font-size: 0.9rem;
 }
-
+#product_img{
+    width: 100px;
+}
+#des{
+    width: 300px;
+}
 tr:hover td {
     background-color: #f1f1f1;
 }
@@ -111,10 +117,9 @@ textarea,
 select {
     width: 100%;
     padding: 10px;
-    margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 1rem;
+    
 }
 
 input[type="text"]:focus,

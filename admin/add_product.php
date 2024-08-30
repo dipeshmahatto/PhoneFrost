@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $category_id = $_POST['category_id'];
 
     // Insert product details first to get the product ID
-    $sql = "INSERT INTO products (name, description, price, category_id) VALUES ('$name', '$description', '$price', '$category_id')";
+    $sql = "INSERT INTO products (name, description, price,storage, category_id) VALUES ('$name', '$description', '$price','$storage', '$category_id')";
     if ($conn->query($sql) === TRUE) {
         $last_id = $conn->insert_id;  // Get the last inserted ID (product ID)
 
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             // Move uploaded file and rename it to product ID.jpg
             if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-                echo "New product added successfully";
+                header("location: ad_dashboard.php");
             } else {
                 echo "Sorry, there was an error uploading your file.";
             }
@@ -68,7 +68,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <label>Description:</label>
         <textarea name="description" required></textarea><br>
         <label>Price:</label>
-        <input type="number" name="price" step="0.01" required><br>
+        <input type="number" name="price"  required><br>
+        <label>Storage:</label>
+        <input type="text" name="storage"  required><br>
         <label>Category:</label>
         <select name="category_id">
             <?php
