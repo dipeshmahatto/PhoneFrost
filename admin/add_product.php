@@ -6,6 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $description = $_POST['description'];
     $price = $_POST['price'];
     $category_id = $_POST['category_id'];
+    $storage = $_POST['storage'];
 
     // Insert product details first to get the product ID
     $sql = "INSERT INTO products (name, description, price,storage, category_id) VALUES ('$name', '$description', '$price','$storage', '$category_id')";
@@ -16,7 +17,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (!empty($_FILES["image"]["name"])) {
             $target_dir = "../img/";
             $target_file = $target_dir . $last_id . ".jpg";  // Save the image as product ID.jpg
-
+            $image_file_name = $last_id . ".jpg";
+            $update_sql = "UPDATE products SET image='$image_file_name' WHERE id=$last_id";
+            $conn->query($update_sql);
             // Check if image file is a valid image type
             $check = getimagesize($_FILES["image"]["tmp_name"]);
             if ($check === false) {
@@ -54,12 +57,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
     <title>Add Product</title>
 </head>
+
 <body>
     <h1>Add Product</h1>
     <form method="POST" enctype="multipart/form-data">
@@ -68,17 +73,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <label>Description:</label>
         <textarea name="description" required></textarea><br>
         <label>Price:</label>
-        <input type="number" name="price"  required><br>
+        <input type="number" name="price" required><br>
         <label>Storage:</label>
-        <input type="text" name="storage"  required><br>
+        <input type="text" name="storage" required><br>
         <label>Category:</label>
         <select name="category_id">
             <?php
             $sql = "SELECT * FROM categories";
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                    echo "<option value='".$row['id']."'>".$row['name']."</option>";
+                while ($row = $result->fetch_assoc()) {
+                    echo "<option value='" . $row['id'] . "'>" . $row['name'] . "</option>";
                 }
             }
             ?>
@@ -88,5 +93,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <button type="submit">Add Product</button>
     </form>
 </body>
-</html>
 
+</html>

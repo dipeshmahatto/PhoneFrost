@@ -16,10 +16,10 @@ $accessories = $conn->query("SELECT * FROM products WHERE category_id IN (2, 3)"
         <?php while($row = $smartphones->fetch_assoc()) { ?>
             <div id="box">
                 <a href="contentDetails.php?id=<?php echo $row['id']; ?>">
-                    <img src="img/<?php echo $row['id']; ?>.jpg" alt="<?php echo $row['name']; ?>">
+                    <img id="image" src="img/<?php echo $row['id']; ?>.jpg" alt="<?php echo $row['name']; ?>">
                     <div id="details">
                         <h3><?php echo $row['name']; ?></h3>
-                        <h4><?php echo $row['description']; ?></h4>
+                        <h3><?php echo "Storage: ".$row['storage']; ?></h3>
                         <h2>rs <?php echo number_format($row['price'], 2); ?></h2>
                     </div>
                 </a>

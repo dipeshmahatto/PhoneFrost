@@ -18,6 +18,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $target_dir = "../img/";
         $target_file = $target_dir . $id . ".jpg";  // Save the image as product ID.jpg
 
+        $image_file_name = $id . ".jpg";
+            $update_sql = "UPDATE products SET image='$image_file_name' WHERE id=$id";
+            $conn->query($update_sql);
+
         // Check if image file is a valid image type
         $check = getimagesize($_FILES["image"]["tmp_name"]);
         if ($check === false) {
