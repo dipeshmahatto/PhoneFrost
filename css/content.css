@@ -52,7 +52,7 @@ img {
     transition: transform 0.3s ease;
 }
 img:hover {
-    transform: translate(-10px, -10px);
+    transform: translate(-5px, -5px);
     /* Move image 10px to the right and 20px down on hover */
 }
 

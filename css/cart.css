@@ -62,7 +62,7 @@ button
     border-radius: 5px;
     cursor: pointer;
 }
-button a
+button a,a
 {
     text-decoration: none;
     color: white;

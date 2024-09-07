@@ -32,7 +32,7 @@
                             
                         </i>
                     </a>
-                    <a href="#"> <i class="fas fa-user-circle userIcon"></i> </a>
+                    <a href="#">Login <i class="fas fa-user-circle userIcon"></i> </a>
                 </div>
             </div>
 
