@@ -19,4 +19,3 @@ if (mysqli_num_rows($result) == 1) {
     header("Location: ../ad_login.php?error=" . urlencode("Invalid credentials"));
     exit();
 }
-?>

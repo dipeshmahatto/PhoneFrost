@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,9 +13,7 @@
 
     <title> PhoneForst</title>
     <!-- favicon -->
-    <link rel="icon"
-        href="img/icon.png"
-        type="image/gif" sizes="16x16">
+    <link rel="icon" href="img/icon.png" type="image/gif" sizes="16x16">
     <!-- header links -->
     <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
@@ -50,8 +50,7 @@
         });
     });
 
-    $(document).ready(function()
-        {
+    $(document).ready(function () {
         $('#containerSlider').slick({
             dots: true,
             infinite: true,
@@ -59,8 +58,8 @@
             slidesToScroll: 1,
             autoplay: true,
             autoplaySpeed: 2000,
-            });
         });
+    });
 </script>
 
 </html>
