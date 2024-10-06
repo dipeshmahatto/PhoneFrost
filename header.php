@@ -38,11 +38,13 @@ if (!isset($_SESSION['user_id'])) {
                 </div>
                 <!-- USER SECTION (CART AND USER ICON) -->
                 <div id="user">
-                    <?php if ($name): ?>
-                        <span><?php echo htmlspecialchars($name); ?></span>
+                    <?php if (isset($_SESSION['user_name'])): ?>
+                        <a href="user/profile.php" class="userIcon">👤</a>
+                        <span><?php echo htmlspecialchars($_SESSION['user_name']); ?></span> 
                         <a href="logout.php">Logout</a>
+                        
                     <?php else: ?>
-                        <a href="user/user_login.php"><?php echo $login; ?></a>
+                        <a href="user/user_login.php">Login</a>
                     <?php endif; ?>
                 </div>
             </div>

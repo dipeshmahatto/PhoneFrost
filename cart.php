@@ -65,9 +65,11 @@ if (!empty($cartItems)) {
                 <?php foreach ($products as $product): ?>
                     <div id="boxContainer">
                         <div id="box">
-                            <img id="cartimg" src="img/<?php echo htmlspecialchars($product['id']); ?>.jpg" alt="<?php echo htmlspecialchars($product['name']); ?>">
-                            <h3><?php echo htmlspecialchars($product['name']); ?> × 
-                                <input type="number" class="quantity" data-product-id="<?php echo $product['id']; ?>" value="<?php echo htmlspecialchars($cartItems[$product['id']]); ?>" min="1" required>
+                            <img id="cartimg" src="img/<?php echo htmlspecialchars($product['id']); ?>.jpg"
+                                alt="<?php echo htmlspecialchars($product['name']); ?>">
+                            <h3><?php echo htmlspecialchars($product['name']); ?> ×
+                                <input type="number" class="quantity" data-product-id="<?php echo $product['id']; ?>"
+                                    value="<?php echo htmlspecialchars($cartItems[$product['id']]); ?>" min="1" required>
                             </h3>
                             <h4>Amount: Rs <?php echo number_format($product['price'] * $cartItems[$product['id']], 2); ?></h4>
                         </div>
@@ -79,7 +81,10 @@ if (!empty($cartItems)) {
                         <h2>Total Amount</h2>
                         <h4>Amount: Rs <?php echo number_format($totalAmount, 2); ?></h4>
                         <div id="button">
-                            <button><a href="orderPlaced.php">Place Order</a></button>
+                            <form action="placeOrder.php" method="POST">
+                                <input type="hidden" name="totalAmount" value="<?php echo $totalAmount; ?>">
+                                <button type="submit">Place Order</button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -93,29 +98,29 @@ if (!empty($cartItems)) {
     <div id="footer"><?php include("footer.php"); ?></div>
 
     <script>
-    $(document).ready(function() {
-        $('.quantity').on('change', function() {
-            var quantity = $(this).val();
-            var productId = $(this).data('product-id');
+        $(document).ready(function () {
+            $('.quantity').on('change', function () {
+                var quantity = $(this).val();
+                var productId = $(this).data('product-id');
 
-            $.ajax({
-                url: 'cart.php',
-                method: 'POST',
-                data: {
-                    action: 'update_cart',
-                    quantity: {
-                        [productId]: quantity
+                $.ajax({
+                    url: 'cart.php',
+                    method: 'POST',
+                    data: {
+                        action: 'update_cart',
+                        quantity: {
+                            [productId]: quantity
+                        }
+                    },
+                    success: function (response) {
+                        var data = JSON.parse(response);
+                        if (data.status === 'success') {
+                            location.reload(); // Reload the page to reflect the changes
+                        }
                     }
-                },
-                success: function(response) {
-                    var data = JSON.parse(response);
-                    if (data.status === 'success') {
-                        location.reload(); // Reload the page to reflect the changes
-                    }
-                }
+                });
             });
         });
-    });
     </script>
 </body>
 
