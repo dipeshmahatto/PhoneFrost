@@ -1,4 +1,9 @@
-<?php include 'query/database.php'; ?>
+<?php include 'query/database.php'; 
+
+if($_SESSION['Adminloggedin'] = false)
+    header('location:index.php')
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,12 +16,24 @@
 </head>
 
 <body>
-    <h1><u>Admin Dashboard</u></h1>
-    <div>
-        <a href="add_product.php">Add New Product</a>
+
+
+    <h1> <b>Admin Dashboard </b></h1>
+    <hr>
+    <div id="adminnav">
+        <a href="add_product.php">
+            <button type="button">Add New Product</button>
+        </a>
+        <a id="leftbutton" href="../index.php">
+            <button type="button">Homepage</button>
+        </a>
+        <a href="../logout.php">
+            <button type="button">logout</button>
+        </a>
     </div>
-    
+
     <h2>Smartphones</h2>
+    <hr>
     <div>
         <!-- <a href="../class/smartphone.php">Smartphone</a> -->
         <!-- <a href="headphones.php">Headphones</a> -->
@@ -53,8 +70,9 @@
             echo "<tr><td colspan='6'>No products found</td></tr>";
         }
         ?>
-    </table>
-    <h2>Other Products</h2>
+    </table><br><br>
+    <h2>Earpods</h2>
+    <hr>
     <table border="1">
         <tr>
             <th>ID</th>

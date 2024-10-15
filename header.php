@@ -45,8 +45,10 @@ if (!isset($_SESSION['user_id'])) {
                         
                     <?php else: ?>
                         <a href="user/user_login.php">Login</a>
+                        <a href="admin/ad_login.php">Admin</a> 
                     <?php endif; ?>
                 </div>
+                
             </div>
         </section>
     </header>

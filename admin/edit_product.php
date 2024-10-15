@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <textarea name="description" required><?php echo $product['description']; ?></textarea><br>
 
         <label>Price:</label>
-        <input type="number" name="price" value="<?php echo $product['price']; ?>"  required><br>
+        <input type="text" name="price" value="<?php echo $product['price']; ?>"  required><br>
         <label>Storage:</label>
         <input type="text" name="storage" value="<?php echo $product['storage']; ?>"  required><br>
 

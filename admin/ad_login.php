@@ -4,7 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Admin Login</title>
-  <link rel="stylesheet" href="../css/login.css"/>
+  <link rel="stylesheet" href="../css/register.css">
+
+  <!-- <link rel="stylesheet" href="../css/login.css"/> -->
   <script src="../../js/admin_login_validate.js"></script>
   <script src="../../js/error.js"></script>
 </head>

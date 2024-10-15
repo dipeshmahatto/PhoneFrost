@@ -52,7 +52,7 @@ button {
 
 a.button:hover,
 button:hover {
-    background-color: #0056b3;
+    background-color: #023368;
 }
 
 /* Table Styles */
@@ -145,7 +145,13 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #218838;
 }
-
+#adminnav{
+    display: block;
+    margin-left: 40%;
+}
+#leftbutton{
+    margin-right: 0px;
+}
 /* Links */
 a {
     color: #007bff;
