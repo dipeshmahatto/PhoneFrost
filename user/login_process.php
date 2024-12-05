@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             header('Location: ../index.php');
             exit();
         } else {
-            echo "Invalid email or password.";
+            header("Location: user_login.php?error=" . urlencode("Invalid credentials"));
         }
 
         $stmt->close();
