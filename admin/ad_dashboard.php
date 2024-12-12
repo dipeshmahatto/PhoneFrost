@@ -27,6 +27,9 @@ if($_SESSION['Adminloggedin'] = false)
         <a id="leftbutton" href="../index.php">
             <button type="button">Homepage</button>
         </a>
+        <a id="leftbutton" href="orders.php">
+            <button type="button">Orders</button>
+        </a>
         <a href="../logout.php">
             <button type="button">logout</button>
         </a>

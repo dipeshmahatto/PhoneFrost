@@ -30,21 +30,27 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Orders</title>
     <link rel="stylesheet" href="css/orders.css">
+    <style>
+        #image{
+            height: 80px;
+        }
+    </style>
 </head>
 
 <body>
     <!-- HEADER -->
-    <div id="header"><?php include("header.php"); ?></div>
+    <div id="header"><?php include_once("header.php"); ?></div>
 
     <div id="ordersContainer">
         <h1>My Orders</h1>
 
         <?php if (!empty($orders)): ?>
-            <table border="1" cellpadding="10">
+            <table border="1" cellpadding="10" style="margin: auto ;margin-bottom: 50px;text-align: center;">
                 <thead>
                     <tr>
                         <th>Order ID</th>
                         <th>Product ID</th>
+                        <th>Image</th>
                         <th>Quantity</th>
                         <th>Order Date</th>
                     </tr>
@@ -54,6 +60,10 @@ $conn->close();
                         <tr>
                             <td><?php echo htmlspecialchars($order['id']); ?></td>
                             <td><?php echo htmlspecialchars($order['product_id']); ?></td>
+                            <td>
+                                <img id="image" src="img/<?php echo $order['product_id']; ?>.jpg"
+                                    alt="<?php echo $row['name']; ?>">
+                            </td>
                             <td><?php echo htmlspecialchars($order['quantity']); ?></td>
                             <td><?php echo htmlspecialchars($order['order_date']); ?></td>
                         </tr>
