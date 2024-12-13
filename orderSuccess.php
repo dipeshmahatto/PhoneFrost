@@ -11,7 +11,7 @@ session_start();
     <title>Order Success</title>
 </head>
 <body>
-    <h1>Your order has been successfully placed!</h1>
+    <h1>Your order has been successfully placed with <strong style="color:green">Cash On Delivery !</strong></h1>
     <p>Thank you for shopping with us.</p>
     <a href="index.php">Continue Shopping</a>
 </body>
